@@ -1,0 +1,238 @@
+/* ---------- GLOBAL ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+html, body, [data-testid="stAppViewContainer"], .stApp {
+    background: #000000 !important;
+    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Remove default Streamlit padding a bit */
+main .block-container {
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: linear-gradient(90deg, #000000, #050505);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    z-index: 100;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+}
+
+/* Invisible checkbox used to control animation */
+.menu-toggle {
+    display: none;
+}
+
+/* Hamburger icon */
+.menu-icon {
+    width: 32px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.25s ease-out;
+}
+
+.menu-icon .bar {
+    height: 3px;
+    width: 100%;
+    background: #f8f8f8;
+    border-radius: 999px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+    transition: all 0.28s cubic-bezier(0.21, 0.61, 0.35, 1);
+}
+
+/* Brand text */
+.brand-text {
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-left: 14px;
+    text-transform: none;
+    transition: transform 0.28s ease-out, margin-left 0.28s ease-out;
+}
+
+/* Click / toggle animation: extend bars and nudge text */
+.menu-toggle:checked + .menu-icon .bar:nth-child(1),
+.menu-toggle:checked + .menu-icon .bar:nth-child(3) {
+    width: 145%;
+    transform: translateX(4px);
+}
+
+.menu-toggle:checked + .menu-icon .bar:nth-child(2) {
+    width: 120%;
+    transform: translateX(2px);
+}
+
+.menu-toggle:checked + .menu-icon + .brand-text {
+    transform: translateX(10px);
+}
+
+/* Side dropdown menu */
+.side-menu {
+    position: fixed;
+    top: 64px;
+    left: 18px;
+    background: rgba(10, 10, 10, 0.96);
+    border-radius: 18px;
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-12px);
+    transition: all 0.25s ease-out;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+}
+
+.menu-toggle:checked ~ .side-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.menu-link {
+    color: #f7f7f7;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 4px 0;
+    position: relative;
+}
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: #c49455;
+    transition: width 0.22s ease-out;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* Spacer so content starts below navbar */
+.nav-spacer {
+    height: 72px;
+}
+
+/* ---------- CARDS / LAYOUT ---------- */
+.card {
+    background: radial-gradient(circle at top left, #151515, #060606 55%);
+    border-radius: 20px;
+    padding: 22px 22px 18px;
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+}
+
+/* About card */
+.about-card {
+    margin-top: 1.8rem;
+}
+
+/* Preview card (image + prediction) */
+.preview-card {
+    margin-top: 0.8rem;
+}
+
+/* Titles */
+.card-title {
+    font-size: 1.55rem;
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+}
+
+.card-subtitle {
+    margin-top: 6px;
+    margin-bottom: 4px;
+    font-size: 0.93rem;
+    color: #b3b3b3;
+}
+
+/* About text */
+.about-text {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    color: #d0d0d0;
+}
+
+/* Prediction section */
+.prediction {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.prediction h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.prediction-text {
+    font-size: 0.94rem;
+    color: #e2e2e2;
+}
+
+/* ---------- FILE UPLOADER STYLING ---------- */
+.stFileUploader > div {
+    border: 2px dashed #3b3b3b !important;
+    background: #050505 !important;
+    padding: 32px 18px !important;
+    border-radius: 18px !important;
+    transition: border 0.25s ease-out, box-shadow 0.25s ease-out,
+                transform 0.15s ease-out;
+}
+
+.stFileUploader > div:hover {
+    border-color: #c49455 !important;
+    box-shadow: 0 0 25px rgba(196, 148, 85, 0.45);
+    transform: translateY(-1px);
+}
+
+/* Hide default label text */
+.stFileUploader label {
+    display: none;
+}
+
+/* Placeholder text in uploader */
+.stFileUploader div[data-testid="stFileUploadDropzoneInstructions"] > div {
+    color: #dcdcdc !important;
+    font-size: 0.95rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+    .brand-text {
+        font-size: 1.25rem;
+    }
+
+    .card {
+        padding: 18px 18px 16px;
+    }
+
+    .stFileUploader > div {
+        padding: 26px 14px !important;
+    }
+}
