@@ -34,6 +34,25 @@ main .block-container {
 }
 
 /* Hamburger icon */
+
+
+.menu-icon {
+    margin-top: 8px;   /* try 8–12px depending on your screen */
+}
+
+
+/* REMOVE STREAMLIT TOP SPACE THAT BREAKS NAVBAR */
+[data-testid="stAppViewContainer"] > .main {
+    padding-top: 0 !important;  
+}
+
+[data-testid="stHeader"] {
+    height: 0px !important;
+    visibility: hidden;
+}
+
+
+
 .menu-icon {
     width: 32px;
     height: 24px;
@@ -42,6 +61,8 @@ main .block-container {
     justify-content: space-between;
     cursor: pointer;
     transition: transform 0.25s ease-out;
+    position: relative;
+    top: 10px;
 }
 
 .menu-icon .bar {
