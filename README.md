@@ -48,11 +48,17 @@ NumPy
 
 📂 Project Structure
 
+
 📁 SnapBreedAI
--├── app.py               # Streamlit frontend
--├── model/               # Pretrained model files
--├── requirements.txt     # Dependencies
--└── README.md
+
+ ├── app.py               # Streamlit frontend
+
+ ├── model/               # Pretrained model files
+
+ ├── requirements.txt     # Dependencies
+
+ └── README.md
+
 
 
 ---
