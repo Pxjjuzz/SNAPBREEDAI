@@ -17,10 +17,15 @@ Click below to try the app:
 ---
 
 📌 Features
+
 📤 Upload an image of any dog
+
 🤖 AI model predicts the breed instantly
+
 ⚡ Fast, simple, and clean UI
+
 🌐 Works on mobile & desktop
+
 🇮🇳 Includes support for Indian breeds like Indian Pariah
 
 
@@ -28,9 +33,13 @@ Click below to try the app:
 ---
 
 🛠️ Tech Stack
+
 Python
+
 Streamlit
+
 TensorFlow / PyTorch (Model)
+
 NumPy
 
 
@@ -40,10 +49,10 @@ NumPy
 📂 Project Structure
 
 📁 SnapBreedAI
- ├── app.py               # Streamlit frontend
- ├── model/               # Pretrained model files
- ├── requirements.txt     # Dependencies
- └── README.md
+-├── app.py               # Streamlit frontend
+-├── model/               # Pretrained model files
+-├── requirements.txt     # Dependencies
+-└── README.md
 
 
 ---
@@ -76,11 +85,17 @@ streamlit run app.py
 🐕‍🦺 Supported Breeds
 
 Includes 100+ breeds such as:
+
 Labrador
+
 German Shepherd
+
 Husky
+
 Pug
+
 Golden Retriever
+
 Indian Pariah
 …and many more.
 
@@ -89,10 +104,15 @@ Indian Pariah
 ---
 
 🔧 Future Improvements
+
 Add multi-breed prediction
+
 Upload multiple images
+
 Add dog health analysis
+
 Improve UI with animations
+
 
 
 
